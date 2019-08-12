@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "0816bd8995937ba9ebdc4a871100969d"
+build_time: [1565603444, 941166000]
+inputs:
+  "/Users/chrisdite/Downloads/Contacts Framework/Finished/RWConnect/Friend.swift": [9223372036, 854775807]
+  "/Users/chrisdite/Downloads/Contacts Framework/Finished/RWConnect/FriendsViewController.swift": [9223372036, 854775807]
+  "/Users/chrisdite/Downloads/Contacts Framework/Finished/RWConnect/EditFriendTableViewController.swift": [9223372036, 854775807]
+  "/Users/chrisdite/Downloads/Contacts Framework/Finished/RWConnect/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/chrisdite/Downloads/Contacts Framework/Finished/RWConnect/FriendCell.swift": [9223372036, 854775807]
