@@ -94,7 +94,7 @@ extension FriendsViewController {
       let friend = friendsList[indexPath.row]
       cell.friend = friend
     }
-    
+
     return cell
   }
 }
