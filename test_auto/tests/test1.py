@@ -2,16 +2,18 @@ from test_auto.tests.base import BaseTest
 from test_auto.pages.home import HomePage
 from test_auto.pages.contact_edit import ContactEditPage
 from test_auto.pages.contact import ContactPage
+from test_auto.pages.contacts_list import ContactsListPage
 
 
 class TestScenario01(
     BaseTest,
     HomePage,
     ContactEditPage,
-    ContactPage
+    ContactPage,
+    ContactsListPage
 ):
 
-    def test_01_00_PhoneNumberAddition(self):
+    def test_01_01_PhoneNumberAddition(self):
         '''
         I. Locates the entry for “Mic Pringle”
         II. Taps the information icon for this entry
@@ -36,3 +38,22 @@ class TestScenario01(
         - Verfication should not only be done when coming from contacts edition screen, but also when coming directly
         from the home screen. This is actually a bug in current app.
         '''
+
+    def test_01_02_ContactAddition(self):
+        '''
+        I. Verifies there is no entry for the contact “Kate Bell”
+        II. Taps the “+” icon in the top right - hand corner
+        III. Selects the "Kate Bell" entry
+        IV. Taps the “Done” button in the top right - hand corner
+        V. Verifies that there is an entry for the contact “Kate Bell”
+        '''
+
+        self.assertIsNone(HomePage.look_for_friend(self))
+        HomePage.add_new_contact(self)
+        ContactsListPage.add_contact(self)
+        self.assertIsNotNone(HomePage.look_for_friend(self))
+
+        '''TODO:
+        - Verfication should not only be done when coming from contacts screen, but also when starting the app.
+        This is actually a bug in current app.
+                '''

@@ -2,7 +2,7 @@ from .base import BasePage
 from appium.webdriver.common.mobileby import MobileBy
 
 
-class ContactPage(BasePage):
+class ContactsListPage(BasePage):
 
     # ===================
     # Inherited Constants
@@ -14,16 +14,19 @@ class ContactPage(BasePage):
     # Test Data
     # =========
 
+
+
     # ========
     # Locators
     # ========
 
-    MAIN_PHONE = (MobileBy.XPATH, '//XCUIElementTypeCell[@name="main"]')
+    DONE_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Done')
+    KATE_CONTACT = (MobileBy.XPATH, '//XCUIElementTypeCell[@name="Kate Bell"]')
 
     # ============
     # Page Methods
     # ============
 
-    def find_phone_number(self):
-        stored_phone = self.get_element(self.MAIN_PHONE)
-        return int(stored_phone.text.encode('ascii','ignore'))
+    def add_contact(self):
+        self.get_element(self.KATE_CONTACT).click()
+        self.get_element(self.DONE_BUTTON).click()
